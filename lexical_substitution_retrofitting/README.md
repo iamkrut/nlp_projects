@@ -1,29 +1,31 @@
 
-# Homework 2
+# Lexical Substitution
 
 ## Installation
 
-Make sure you setup your virtual environment:
+Setup virtual environment:
 
     python3 -m venv venv
     source venv/bin/activate
     pip install -r requirements.txt
+    
+## Create .magnitude file
 
-You can optionally copy and modify the requirements for when we
-test your code:
+You must use the pre-trained word vectors from `glove.6B.100d.magnitude` and it exists in the `/data` folder
 
-    cp requirements.txt answer/requirements.txt
+## Retrofitting Word Vectors with Semantic Lexicons
 
-## Required files
+To create the retrofitted .magnitude file, run this command:
 
-You must create the following files:
+`sh run.sh`
 
-    answer/lexsub.py
-    answer/lexsub.ipynb
+This script reads the original word vector file `data/glove.6B.100d.magnitude`. 
+
+It will take approximatelty 15 minutes to complete the process. The script runs `modifyWordVec.py` file that generates the retrofiited word vectors in a text file. It is by default reading the `wordnet-synonyms.txt` for reading the lexicon to create ontology graph. The final step generates '.magnitude' file from the generated '.txt' file. 
 
 ## Create output.zip
 
-To create the `output.zip` file for upload to Coursys do:
+To create the `output.zip` file do:
 
     python3 zipout.py
 
@@ -43,7 +45,7 @@ For more options:
 
 ## Check your accuracy
 
-To check your accuracy on the dev set:
+To check accuracy on the dev set:
 
     python3 check.py
 
@@ -51,36 +53,7 @@ For more options:
 
     python3 check.py -h
 
-In particular use the log file to check your output evaluation:
+In particular use the log file to check output evaluation:
 
     python3 check.py -l log
-
-The accuracy on `data/input/test.txt` will not be shown.  We will
-evaluate your output on the test input after the submission deadline.
-
-## Default solution
-
-The default solution is provided in `default.py`. To use the default
-as your solution:
-
-    cp default.py answer/lexsub.py
-    cp default.ipynb answer/lexsub.ipynb
-    python3 zipout.py
-    python3 check.py
-
-Make sure that the command line options are kept as they are in
-`default.py`. You can add to them but you must not delete any
-command line options that exist in `default.py`.
-
-Submitting the default solution without modification will get you
-zero marks.
-
-## Data files
-
-The data files provided are:
-
-* `data/sample_vec.txt` -- small sample word vector file
-* `data/lexicons` -- different lexicons / ontologies used for retrofitting
-* `data/input` -- input files `dev.txt` and `test.txt`
-* `data/reference/dev.out` -- reference output for the `dev.txt` input file
 

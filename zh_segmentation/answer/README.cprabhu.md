@@ -1,4 +1,0 @@
-- Extracting trigrams.
-- Documentation.
-- Experimenting with lambda values for bigram - Greedy search.
-- Model inference.

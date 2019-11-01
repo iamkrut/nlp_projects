@@ -140,7 +140,7 @@ if __name__ == '__main__':
     optparser = optparse.OptionParser()
     optparser.add_option("-r", "--run", dest="run_program", default='zhsegment.py', help="run this program against testcases [default: zhsegment.py]")
     optparser.add_option("-x", "--pythonbin", dest="python_bin", default='venv/bin/python3', help="run this binary of Python to run the program [default: python3]")
-    optparser.add_option("-a", "--answerdir", dest="answer_dir", default='answer', help="answer directory [default: answer]")
+    optparser.add_option("-a", "--answerdir", dest="answer_dir", default='/', help="answer directory [default: answer]")
     optparser.add_option("-i", "--inputdir", dest="input_dir", default=os.path.join('data', 'input'), help="testcases directory [default: data/input]")
     optparser.add_option("-e", "--ending", dest="file_suffix", default='.txt', help="suffix to use for testcases [default: .txt]")
     optparser.add_option("-o", "--output", dest="output_dir", default='output', help="Save the output from the testcases to this directory.")

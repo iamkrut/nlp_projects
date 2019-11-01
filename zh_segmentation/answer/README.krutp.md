@@ -1,3 +1,0 @@
-- Implemented the iterative algorithm
-- Implemented the trigram stupid backoff and linear interpolation smoothing model.
-- Model inference.
